@@ -14,8 +14,3 @@ jobs:
           java-version: 11
       - name: Unit & Integration Tests
         run: mvn -B verify # -B: --batch-mode
-      - name: Sonar
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=wzzzzwwzw_iwvg-devops-wael-louati
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
