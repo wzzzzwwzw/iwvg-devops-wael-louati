@@ -1,0 +1,16 @@
+name: DevOps
+on:
+  push:
+    branches: ['develop', 'release-*']
+jobs:
+  devops:
+    name: Test - Github Actions & SonarCloud Scan & Slack WebHooks
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with: {fetch-depth: 0}
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Unit & Integration Tests
+        run: mvn -B verify
