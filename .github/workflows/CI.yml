@@ -4,8 +4,8 @@ on:
     branches: ['develop', 'release-*']
 jobs:
   devops:
-    name: Test - Github Actions & SonarCloud Scan & Slack WebHooks
-    runs-on: windows-latest
+    name: Test - Github Actions & Integration & SonarCloud Scan & Slack WebHook
+    runs-on: windows-latest # macos-latest macos-11 windows-2019 ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with: {fetch-depth: 0}
@@ -13,4 +13,15 @@ jobs:
         with:
           java-version: 11
       - name: Unit & Integration Tests
-        run: mvn -B verify
+        run: mvn -B verify # -B: --batch-mode
+      - name: Sonarcloud
+        if: success() # always() failure() success()
+        run: >
+          mvn -B verify -DskipTests sonar:sonar
+          -Dsonar.projectKey=wzzzzwwzw_iwvg-devops-wael-louati
+          -Dsonar.organization=wzzzzwwzw
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.login=$SONAR_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
