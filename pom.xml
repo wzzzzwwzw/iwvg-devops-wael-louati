@@ -46,6 +46,8 @@
         <jacoco.version>0.8.5</jacoco.version>
         <!-- OpenAPI -->
         <openapi.version>1.4.6</openapi.version>
+        <sonar.organization>wzzzzwwzw</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
