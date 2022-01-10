@@ -7,3 +7,4 @@ Autor: Wael Louati
 
 ### Estado del código
 [![DevOps](https://github.com/wzzzzwwzw/iwvg-devops-wael-louati/actions/workflows/CI.yml/badge.svg)](https://github.com/wzzzzwwzw/iwvg-devops-wael-louati/actions/workflows/CI.yml)
+[![BCH compliance](https://bettercodehub.com/edge/badge/wzzzzwwzw/iwvg-devops-wael-louati?branch=master)](https://bettercodehub.com/)
