@@ -15,7 +15,7 @@ jobs:
       - name: Unit & Integration Tests
         run: mvn -B verify # -B: --batch-mode
       - name: Sonarcloud
-        if: success() # always() failure() success()
+        if: success() # always() failure() success()/
         run: >
           mvn -B verify -DskipTests sonar:sonar
           -Dsonar.projectKey=wzzzzwwzw_iwvg-devops-wael-louati
