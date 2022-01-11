@@ -33,5 +33,8 @@ public class Searches {
                 .map(Fraction::decimal)
                 ;
     }
+    public Stream<String>findUserIdByAllProperFraction() {
+        return Stream.empty();
+    }
 
 }
