@@ -45,4 +45,11 @@ public class Searches {
         return Stream.empty();
     }
 
+    public Stream<String> findUserFamilyNameByImproperFraction(int fractionDenominator) {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(fraction -> fraction.getNumerator()>fraction.getDenominator()))
+                .map(User::getFamilyName)
+                .distinct();
+    }
+
 }
