@@ -37,4 +37,8 @@ public class Searches {
         return Stream.empty();
     }
 
+    public Stream<Double> findDecimalImproperFractionByUserName(String name) {
+        return Stream.empty();
+    }
+
 }
