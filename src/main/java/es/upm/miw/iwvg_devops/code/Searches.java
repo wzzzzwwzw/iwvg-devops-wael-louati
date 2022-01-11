@@ -22,4 +22,10 @@ public class Searches {
         return Stream.empty();
     }
 
+    public Stream<String>findFractionDivisionByUserId(String id) {
+        return Stream.empty();
+    }
+
+
+
 }
