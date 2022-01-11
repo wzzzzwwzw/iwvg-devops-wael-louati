@@ -12,5 +12,10 @@ public class Searches {
                         .anyMatch(Fraction::isProper))
                 .map(User::familyNameInitial);
 }
+    public Stream<String>  findUserIdBySomeProperFraction(int fractionDenominator) {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(fraction -> fraction.getNumerator()<fraction.getDenominator()))
+                .map(User::getId);
+    }
 
 }
