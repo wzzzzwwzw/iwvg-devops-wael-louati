@@ -51,5 +51,10 @@ public class Searches {
                 .map(User::getFamilyName)
                 .distinct();
     }
+    public Fraction findHighestFraction() {
+        return new UsersDatabase().findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .max(Comparator.comparingDouble(Fraction::decimal)).get();
+    }
 
 }
