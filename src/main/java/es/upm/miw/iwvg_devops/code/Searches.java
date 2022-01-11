@@ -26,6 +26,12 @@ public class Searches {
         return Stream.empty();
     }
 
-
+    public Stream<Double> findFirstDecimalFractionByUserName(String name) {
+        return new UsersDatabase().findAll()
+                .filter(user->name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream())
+                .map(Fraction::decimal)
+                ;
+    }
 
 }
