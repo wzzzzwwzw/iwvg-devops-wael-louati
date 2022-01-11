@@ -93,4 +93,8 @@ public class Searches {
         return Stream.empty();
     }
 
+    public Stream<String>findFractionSubtractionByUserName(String name){
+        return Stream.empty();
+    }
+
 }
