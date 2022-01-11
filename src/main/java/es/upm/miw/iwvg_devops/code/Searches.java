@@ -13,6 +13,7 @@ public class Searches {
                 .map(User::familyNameInitial);
 }
     public Stream<String>  findUserIdBySomeProperFraction(int fractionDenominator) {
+        //return new UsersDatabase
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(fraction -> fraction.getNumerator()<fraction.getDenominator()))
                 .map(User::getId);
