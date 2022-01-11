@@ -89,5 +89,8 @@ public class Searches {
 
 
     }
+    public Stream<String>findFractionAdditionByUserId(String id) {
+        return Stream.empty();
+    }
 
 }
