@@ -18,4 +18,8 @@ public class Searches {
                 .map(User::getId);
     }
 
+    public Stream<String> findFractionMultiplicationByUserFamilyName(String familyName) {
+        return Stream.empty();
+    }
+
 }
