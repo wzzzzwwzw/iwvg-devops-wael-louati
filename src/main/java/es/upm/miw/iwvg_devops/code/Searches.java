@@ -41,4 +41,8 @@ public class Searches {
         return Stream.empty();
     }
 
+    public Stream<String>findFirstProperFractionByUserId(String id) {
+        return Stream.empty();
+    }
+
 }
