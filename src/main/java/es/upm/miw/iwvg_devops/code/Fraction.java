@@ -79,4 +79,7 @@ public class Fraction {
     }
 
 
+    public boolean isNegative() {
+        return this.decimal() < 0;
+    }
 }
