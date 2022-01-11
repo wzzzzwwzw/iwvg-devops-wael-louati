@@ -57,4 +57,11 @@ public class Searches {
                 .max(Comparator.comparingDouble(Fraction::decimal)).get();
     }
 
+    public Stream<String> findUserNameByAnyImproperFraction(int denominator) {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(fraction -> fraction.getNumerator()>fraction.getDenominator()))
+                .map(User::getFamilyName)
+                .distinct();
+    }
+
 }
